@@ -1,0 +1,20 @@
+- name: Create an instance in AWS
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Create the instance in AWS
+      ec2:
+        key_name: id_rsa_os1_rcalvaga
+        group: default
+        instance_type: t2.micro
+        image: ami-27b3094b
+        region: sa-east-1
+        wait: yes
+        wait_timeout: 500
+        count: 1
+        instance_tags:
+                Name: test_instance_ansible
+        monitoring: yes
+        vpc_subnet_id: subnet-e05dc184
+        assign_public_ip: no

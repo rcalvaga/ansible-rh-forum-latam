@@ -1,0 +1,14 @@
+- name: launch ansible cloudformation example
+  cloudformation:
+    stack_name: "ansible-cloudformation"
+    state: "present"
+    region: "sa-east-1"
+    disable_rollback: true
+    template: "/home/rcalvaga/Red_Hat_Job/SMEs/Amazon/quickstart-openshift.template.json"
+    template_parameters:
+      KeyName: "id_rsa_os1_rcalvaga"
+      DiskType: "ephemeral"
+      InstanceType: "m1.small"
+      ClusterSize: 3
+    tags:
+      Stack: "ansible-cloudformation"

@@ -1,0 +1,13 @@
+- name: Terminate an instance in AWS
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  vars:
+    instance_ids:
+      - 'i-e8e82b6a'
+  tasks:
+    - name: Terminate instance in AWS
+      ec2:
+        region: sa-east-1        
+        state: 'absent'
+        instance_ids: '{{ instance_ids }}'
