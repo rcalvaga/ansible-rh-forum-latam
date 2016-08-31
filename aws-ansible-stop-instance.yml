@@ -4,7 +4,7 @@
   connection: local
   vars:
     instance_ids:
-      - 'i-8dbc7e0f'
+      - 'i-6a894ae8'
     region: sa-east-1
   tasks:
     - name: Stopping the instance
@@ -13,5 +13,5 @@
         region: '{{ region }}'
         state: stopped
         wait: True
-        vpc_subnet_id: subnet-9e630ffa
+        vpc_subnet_id: subnet-471b7923
         assign_public_ip: no
