@@ -2,10 +2,6 @@
   hosts: localhost
   gather_facts: false
   connection: local
-  vars:
-    instance_ids:
-      - 'i-6a894ae8'
-    region: sa-east-1
   tasks:
     - name: Stopping the instance
       ec2:
