@@ -9,5 +9,5 @@
         region: '{{ region }}'
         state: running
         wait: True
-        vpc_subnet_id: subnet-471b7923
+        vpc_subnet_id: '{{ vpc_subnet_id }}'
         assign_public_ip: no
