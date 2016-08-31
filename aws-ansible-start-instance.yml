@@ -2,7 +2,6 @@
   hosts: localhost
   gather_facts: false
   connection: local
-  region: sa-east-1
   tasks:
     - name: Start the instances
       ec2:
