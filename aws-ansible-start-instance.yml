@@ -4,7 +4,7 @@
   connection: local
   vars:
     instance_ids:
-      - 'i-8dbc7e0f'
+      - 'i-6a894ae8'
     region: sa-east-1
   tasks:
     - name: Start the instances
