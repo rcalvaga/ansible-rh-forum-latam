@@ -5,7 +5,7 @@
   connection: local
     tasks:
         - name: Conexion a OpenShift Online
-          command: oc login --username=robert --password=myhero --insecure-skip-tls-verify --server=openshift.forum.rhtechofficelatam.com:8443
+          command: oc login --username={{user}} --password={{password}} --insecure-skip-tls-verify --server={{server}}:8443
 
         - name: Eliminando Aplicacion en OpenShift Online
           command: oc delete project {{project_name}}
