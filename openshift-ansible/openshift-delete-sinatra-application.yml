@@ -1,0 +1,11 @@
+- name: Eliminando una aplicación en OpenShift Online
+  hosts: all
+  user: centos
+  gather_facts: false
+  connection: local
+    tasks:
+        - name: Conexion a OpenShift Online
+          command: oc login --username=robert --password=myhero --insecure-skip-tls-verify --server=openshift.forum.rhtechofficelatam.com:8443
+
+        - name: Eliminando Aplicacion en OpenShift Online
+          command: oc delete project {{project_name}}
