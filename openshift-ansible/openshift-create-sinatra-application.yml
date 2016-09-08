@@ -1,0 +1,19 @@
+- name: Creando una nueva aplicación en OpenShift Online
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Conexion a OpenShift Online
+      command: oc login --username=robert --password=myhero --insecure-skip-tls-verify --server=openshift.forum.rhtechofficelatam.com:8443
+    
+    - name: Creando el proyecto
+      command: oc new-project {{project_name}} --display-name="Red Hat Forum {{project_display_name}}."
+
+    - name: Accediendo al proyecto
+      command: oc project {{project_name}}
+
+    - name: Creando nueva aplicacion en OpenShift Enterprise
+      command: oc new-app https://github.com/openshift/sinatra-example
+
+    - name: Exponiendo la App via Route
+      command: oc expose service sinatra-example --hostname=sinatra-example.cloudapps.forum.rhtechofficelatam.com
