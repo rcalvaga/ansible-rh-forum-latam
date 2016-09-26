@@ -1,0 +1,7 @@
+- name: Eliminando Aplicación RH Fofum 2016 en OpenShift 3.2
+  hosts: master-group
+  gather_facts: false
+  connection: ssh
+  tasks:
+    - name: Eliminando Aplicacion RH Forum 2016 en OpenShift Enterprise 3.2
+      command: oc delete project {{project_name}}
