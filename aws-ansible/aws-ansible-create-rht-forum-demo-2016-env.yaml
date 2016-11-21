@@ -35,7 +35,7 @@
         subnets:
           - cidr: 192.168.1.0/24
             az: "{{ aws_zone }}"
-            resource_tags: { "Name":"rht-forum-latam-public-subnet" }
+            resource_tags: { "Name":"rht-forum-latam-private-subnet" }
         internet_gateway: True
         route_tables:
           - subnets:
