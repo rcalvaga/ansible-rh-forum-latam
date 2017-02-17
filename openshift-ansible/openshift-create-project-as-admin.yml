@@ -1,0 +1,10 @@
+- name: Creando un nuevo Proyecto en OpenShift Enterprise 3.2
+  hosts: master.latam.forum.redhat.com
+  gather_facts: false
+  connection: ssh
+  tasks:
+    - name: Creando nuevo Proyecto en OpenShift Enterprise 3.2
+      command: oadm new-project {{project_name}} --display-name="Test Project {{project_name}}." --admin=demo --node-selector='host=apps'
+    
+    - name: Estatus de OpenShift Enteprise 3.2
+      command: oc status
