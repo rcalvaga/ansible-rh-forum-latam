@@ -1,5 +1,5 @@
 - name: Eliminando Aplicación RH Fofum 2016 en OpenShift 3.2
-  hosts: master-group
+  hosts: master.latam.forum.redhat.com
   gather_facts: false
   connection: ssh
   tasks:
