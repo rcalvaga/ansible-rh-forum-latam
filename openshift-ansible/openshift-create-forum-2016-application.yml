@@ -1,5 +1,5 @@
 - name: Creando Aplicación RH Forum 2016 en OpenShift Enterprise 3.2
-  hosts: master.latam.forum.redhat.comp
+  hosts: master.latam.forum.redhat.com
   gather_facts: false
   connection: ssh
   tasks:
