@@ -1,0 +1,7 @@
+- name: Eliminando un nuevo Proyecto en OpenShift Enterprise 3.2
+  hosts: master.latam.forum.redhat.com
+  gather_facts: false
+  connection: ssh
+  tasks:
+    - name: Eliminando Proyecto en OpenShift Enterprise
+      command: oc delete project {{project_name}}
