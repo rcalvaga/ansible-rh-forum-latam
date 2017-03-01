@@ -1,4 +1,4 @@
-- name: Deleting a Project in OpenShift Enterprise 3
+- name: Delete a Project in OpenShift Enterprise 3
   hosts: all
   gather_facts: false
   connection: ssh
