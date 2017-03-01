@@ -1,5 +1,5 @@
 - name: Creando una nueva aplicación en OpenShift Online
-  hosts: localhost
+  hosts: all
   gather_facts: false
   connection: local
   tasks:
