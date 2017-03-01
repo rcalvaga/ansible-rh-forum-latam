@@ -1,7 +1,7 @@
-- name: Deleting Demo Application for RHT Fofum LATAM 2016 in OpenShift 3
+- name: Delete Demo Application for RHT Forum LATAM 2016 in OpenShift 3
   hosts: all
   gather_facts: false
   connection: ssh
   tasks:
-    - name: Deleting Demo Application for RHT Fofum LATAM 2016 in OpenShift 3
+    - name: Deleting Demo Application for RHT Forum LATAM 2016 in OpenShift 3
       command: oc delete project "{{ project_name }}"
