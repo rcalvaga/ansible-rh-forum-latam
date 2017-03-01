@@ -4,4 +4,4 @@
   connection: ssh
   tasks:
     - name: Deleting a Project in OpenShift Enterprise 3
-      command: oc delete project {{project_name}}
+      command: oc delete project "{{ project_name }}"
