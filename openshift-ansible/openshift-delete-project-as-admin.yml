@@ -1,5 +1,5 @@
 - name: Eliminando un nuevo Proyecto en OpenShift Enterprise 3.2
-  hosts: master.latam.forum.redhat.com
+  hosts: all
   gather_facts: false
   connection: ssh
   tasks:
