@@ -1,19 +1,19 @@
-- name: Creando Aplicación RH Forum 2016 en OpenShift Enterprise 3.2
+- name: Creating RHT Forum LATAM 2016 Application in OpenShift Enterprise 3
   hosts: all
   gather_facts: false
   connection: ssh
   tasks:
-    - name: Creando Proyecto RH Forum 2016 en OpenShift Enterprise 3.2
+    - name: Creating Project RHT Forum LATAM 2016 in OpenShift Enterprise 3
       command: oadm new-project {{project_name}} --display-name="Red Hat Forum {{demo_environment}}." --admin={{demo_user}} --node-selector='host=apps'
 
-    - name: Creando nueva Aplicacion RH Forum 2016 en OpenShift Enterprise 3.2
+    - name: Creating New App for RHT Forum LATAM 2016 in OpenShift Enterprise 3
       command: oc new-app forum-apps --namespace={{project_name}}
 
-    - name: Asignando Permisos para cicd al nuevo Projecto 
-      command: oc policy add-role-to-user edit system:serviceaccount:cicd:default -n {{project_name}}
+    - name: Assign Permissions to cicd for Project "{{ project_name }}" 
+      command: oc policy add-role-to-user edit system:serviceaccount:cicd:default -n "{{ project_name }}"
 
-    - name: Asignando Permisos para tooling al nuevo Projecto
-      command: oc policy add-role-to-user edit system:serviceaccount:tooling:default -n {{project_name}}
+    - name: Assign Permissions to tooling for Project "{{ project_name }}"
+      command: oc policy add-role-to-user edit system:serviceaccount:tooling:default -n "{{ project_name }}"
 
-    - name: Configurando Auto-Scaling para HotelsWS
-      command: oc autoscale dc/hotels --min 1 --max 5 --cpu-percent=5 -n {{project_name}}
+    - name: Configuring Auto-Scaling to HotelsWS
+      command: oc autoscale dc/hotels --min 1 --max 5 --cpu-percent=5 -n "{{ project_name }}"
