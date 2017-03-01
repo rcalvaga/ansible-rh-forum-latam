@@ -4,4 +4,4 @@
   connection: ssh
   tasks:
     - name: Deleting Demo Application for RHT Fofum LATAM 2016 in OpenShift 3
-      command: oc delete project {{project_name}}
+      command: oc delete project "{{ project_name }}"
