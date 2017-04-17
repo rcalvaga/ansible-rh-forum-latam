@@ -3,6 +3,5 @@
   gather_facts: false
   connection: ssh
   tasks:
-    - name: Delete any previously existing namespaces 
-      command: oc delete project {{ microservices_namespace }}
-      ignore_errors: True
+    - name: Deleting Demo Application for RHT Forum LATAM 2016 in OpenShift 3
+      command: oc delete project "{{ project_name }}"
